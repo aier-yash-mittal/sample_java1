@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+               git  'https://github.com/aier-yash-mittal/sample_java1.git'
+            }
+        }
+        stage('Execute') {
+            steps {
+              bat '''javac Test.java
+                    java Test.java'''
+            }
+        }
